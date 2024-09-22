@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telugu Speech Recognition</title>
+    <script src="/static/js/recorder.js" defer></script>
+    <style>
+        body {
+            background-color: #e0f7fa; /* Light blue background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        h1 {
+            color: #d32f2f; /* Tomato red */
+            margin-bottom: 20px;
+        }
+        section {
+            background-color: #ffffff; /* White background for sections */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h2 {
+            color: #00796b; /* Teal */
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #record {
+            background-color: #388e3c; /* Green */
+            color: white;
+        }
+        #stop {
+            background-color: #d32f2f; /* Red */
+            color: white;
+        }
+        #upload-button {
+            background-color: #388e3c; /* Green */
+            color: white;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        audio {
+            margin-top: 10px;
+        }
+        #record-result, #upload-result {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Automated Speech Recognition</h1>
+
+    <!-- Audio Recording -->
+    <section>
+        <h2>Record your Audio</h2>
+        <button id="record">Record</button>
+        <button id="stop" disabled>Stop</button>
+        <audio id="audio" controls></audio>
+        <div id="record-result"></div>
+    </section>
+
+    <!-- File Upload -->
+    <section>
+        <h2>Upload an Audio File</h2>
+        <form id="upload-form">
+            <input type="file" id="audio-file" name="audioFile" accept="audio/*" />
+            <button type="button" id="upload-button">Convert</button>
+        </form>
+        <div id="upload-result"></div>
+    </section>
+</body>
+</html>
